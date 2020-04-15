@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+using namespace std;
+int main()
+{
+    double y[100], x, k; //инициализируем переменные и массив
+    double a = (1 / 100000); //точность
+    int i;
+    cout << "Введите x" << '\n';
+    cin >> x;  //ввод данных
+    i = 0; y[0] = x;  //начальные знач.
+
+   
+
+    do
+    {
+        y[i + 1] = (0.333333333) * (2 * y[i] + (x) / (y[i] * y[i]));
+        k = fabs(y[i + 1] - y[i]); 
+        i++;
+    } while (k > a);  
+
+    cout << "корень=" << y[i - 1] << '\n';
+    return 0;
+}
